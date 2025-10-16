@@ -1,4 +1,4 @@
-import { useState, type Dispatch, type SetStateAction } from "react";
+import { useState} from "react";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import ModalLogin from "../context/ModalLogin.tsx";
@@ -6,8 +6,8 @@ import ModalRegister from "../context/ModalRegister.tsx";
 
 // Tipado de props
 interface NavbarProps {
-  user: boolean | null;
-  setUser: Dispatch<SetStateAction<boolean | null>>;
+  user: { name: string } | null;
+  setUser: React.Dispatch<React.SetStateAction<{ name: string } | null>>;
 }
 
 function Navbar({ user, setUser }: NavbarProps) {

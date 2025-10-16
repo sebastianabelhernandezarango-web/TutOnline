@@ -5,7 +5,7 @@ import libros from "../Img/icons/pila-de-libros.png";
 
 // Props tipadas
 interface LandingPageProps {
-  user: boolean | null;
+  user: { name: string } | null;
 }
 
 function LandingPage({ user }: LandingPageProps) {

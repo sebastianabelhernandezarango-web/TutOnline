@@ -7,7 +7,7 @@ import BusquedaTutores from "./Pages/BusquedaTutores.tsx";
 
 function App() {
   // user puede ser null (no logueado) o boolean (logueado)
-  const [user, setUser] = useState<boolean | null>(true);
+  const [user, setUser] = useState<{ name: string } | null>(null);
 
   return (
     <Router>
