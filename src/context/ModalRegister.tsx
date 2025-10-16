@@ -1,7 +1,14 @@
 import { Modal, Button, Form } from "react-bootstrap";
+import React from "react";
 
-function ModalRegister({ show, setShow }) {
-  const handleRegister = (e) => {
+// Tipado de props
+interface ModalRegisterProps {
+  show: boolean;
+  setShow: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const ModalRegister: React.FC<ModalRegisterProps> = ({ show, setShow }) => {
+  const handleRegister = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setShow(false);
     alert("Registro exitoso (aquí iría la lógica real)");
@@ -33,6 +40,6 @@ function ModalRegister({ show, setShow }) {
       </Modal.Body>
     </Modal>
   );
-}
+};
 
 export default ModalRegister;

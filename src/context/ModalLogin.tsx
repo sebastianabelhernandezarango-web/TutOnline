@@ -1,9 +1,18 @@
 import { Modal, Button, Form } from "react-bootstrap";
+import React from "react";
 
-function ModalLogin({ show, setShow, setUser }) {
-  const handleLogin = (e) => {
+// Tipado de props
+interface ModalLoginProps {
+  show: boolean;
+  setShow: React.Dispatch<React.SetStateAction<boolean>>;
+  setUser: React.Dispatch<React.SetStateAction<{ name: string } | null>>;
+}
+
+const ModalLogin: React.FC<ModalLoginProps> = ({ show, setShow, setUser }) => {
+  const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setUser({ name: "Usuario" }); // Simula login exitoso
+    // Simula login exitoso
+    setUser({ name: "Usuario" });
     setShow(false);
   };
 
@@ -29,6 +38,6 @@ function ModalLogin({ show, setShow, setUser }) {
       </Modal.Body>
     </Modal>
   );
-}
+};
 
 export default ModalLogin;
