@@ -1,0 +1,453 @@
+/* ==============================
+   Estilos generales
+============================== */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f0f4ff;
+  color: #212529;
+  scroll-behavior: smooth;
+}
+
+
+/* ==============================
+   Título principal con gradiente
+   ============================== */
+.landing-page .titulo {
+  font-size: 2.5rem; /* tamaño grande */
+  font-weight: 700;
+  text-align: center;
+  background: linear-gradient(90deg, #007bff, #6f42c1, #4da3ff); /* gradiente azul-violeta-azul */
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+/* Hover con animación sutil */
+.landing-page .titulo:hover {
+  animation: titulo-brillo 2s ease-in-out infinite alternate;
+}
+
+/* Animación de brillo sutil */
+@keyframes titulo-brillo {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ==============================
+   Párrafo descriptivo
+   ============================== */
+.landing-page .parrafo {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #495057; /* gris oscuro */
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  line-height: 1.5;
+}
+
+
+/* ==============================
+   Barra de búsqueda (versión colorida y moderna)
+============================== */
+.search-bar {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.search-bar .input-group {
+  width: 60%;
+  max-width: 600px;
+  background: white;
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.search-bar .input-group:hover {
+  box-shadow: 0 6px 25px rgba(0, 123, 255, 0.2);
+}
+
+.search-bar input {
+  border: none;
+  padding: 0.9rem 1.5rem;
+  border-radius: 50px 0 0 50px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.search-bar input::placeholder {
+  color: #adb5bd;
+  font-style: italic;
+}
+
+.search-bar button {
+  border: none;
+  background: linear-gradient(90deg, #007bff, #4da3ff);
+  color: white;
+  padding: 0.9rem 1.8rem;
+  border-radius: 0 50px 50px 0;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.search-bar button:hover {
+  background: linear-gradient(90deg, #0056d2, #007bff);
+}
+
+/* ==============================
+   Sugerencias (chips animados e interactivos)
+============================== */
+.sugerencias {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.sugerencias .chip {
+  cursor: pointer;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  color: white;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Paleta de colores estilo Figma */
+.sugerencias .chip:nth-child(1) { background: linear-gradient(135deg, #007bff, #5ab4ff); }
+.sugerencias .chip:nth-child(2) { background: linear-gradient(135deg, #28a745, #7cd68b); }
+.sugerencias .chip:nth-child(3) { background: linear-gradient(135deg, #ffc107, #ffe082); }
+.sugerencias .chip:nth-child(4) { background: linear-gradient(135deg, #17a2b8, #63d2e3); }
+.sugerencias .chip:nth-child(5) { background: linear-gradient(135deg, #fd7e14, #ffb84d); }
+.sugerencias .chip:nth-child(6) { background: linear-gradient(135deg, #6f42c1, #b383ff); }
+
+/* Efecto hover más dinámico */
+.sugerencias .chip:hover {
+  transform: translateY(-4px) scale(1.07);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Efecto de brillo suave al pasar el cursor */
+.sugerencias .chip::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: skewX(-30deg);
+  transition: left 0.4s ease;
+}
+
+.sugerencias .chip:hover::after {
+  left: 100%;
+}
+
+/* ==============================
+   Estadísticas generales 
+   ============================== */
+
+/* Cada columna como tarjeta */
+.landing-page .estadisticas .col-md-3 {
+  background: white; 
+  padding: 2rem 1rem !important;
+  margin: 1rem 0.5rem !important;
+  border-radius: 12px !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08) !important;
+  position: relative;
+  overflow: hidden; /* para que el halo no se salga */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover clásico */
+.landing-page .estadisticas .col-md-3:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* Halo de brillo animado al pasar el cursor */
+.landing-page .estadisticas .col-md-3::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(102, 51, 255, 0.35) 0%, rgba(0, 123, 255, 0) 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+  z-index: 0; /* detras del contenido */
+  transform: scale(0.8);
+}
+
+.landing-page .estadisticas .col-md-3:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Números con resplandor animado */
+.landing-page .estadisticas .col-md-3 h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #0f2338;
+  position: relative; /* para que quede sobre el halo */
+  z-index: 1;
+  animation: glow 2.5s ease-in-out infinite alternate;
+  transition: color 0.3s ease;
+}
+
+/* Texto descriptivo de cada estadística */
+.landing-page .estadisticas .col-md-3 p {
+  font-size: 1.1rem;
+  color: #495057;
+  margin-top: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Animación de resplandor en los números */
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.5),
+                 0 0 10px rgba(255, 0, 0, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 12px rgba(0, 123, 255, 0.7),
+                 0 0 20px rgba(0, 123, 255, 0.4);
+  }
+  100% {
+    text-shadow: 0 0 5px rgba(0, 123, 255, 0.5),
+                 0 0 10px rgba(0, 123, 255, 0.3);
+  }
+}
+
+/* ====================
+   Tutores Destacados 
+   ==================== */
+.landing-page .tutores-destacados {
+  padding: 5rem 1rem;
+  background-color: #eef5ff; /* azul muy suave para la sección */
+  text-align: center;
+}
+
+.landing-page .tutores-destacados h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
+  color: #212529;
+}
+
+/* Cada tarjeta de tutor */
+.landing-page .tutores-destacados .col-md-3 .card {
+  border: none;
+  border-radius: 15px;
+  background: white;
+  padding: 2rem 1rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  cursor: pointer;
+}
+
+.landing-page .tutores-destacados .col-md-3 .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* Circulo con iniciales o imagen */
+.landing-page .tutores-destacados .card .circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 1rem auto;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+/* Colores de las iniciales */
+.bg-primary { background-color: #007bff !important; }
+.bg-purple { background-color: #6f42c1 !important; }
+.bg-success { background-color: #28a745 !important; }
+.bg-danger { background-color: #dc3545 !important; }
+
+/* Nombre del tutor */
+.landing-page .tutores-destacados .card h5 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: #212529;
+}
+
+/* Materia */
+.landing-page .tutores-destacados .card p.text-muted {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Calificación y precio */
+.landing-page .tutores-destacados .card p:last-child {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  color: #007bff;
+}
+
+
+/* ==============================
+   Sección "Cómo funciona" mejorada
+============================== */
+.como-funciona {
+  padding: 5rem 1rem;
+  text-align: center;
+  background-color: #f8f9fa; /* fondo suave */
+}
+
+.como-funciona h2 {
+  font-size: 2rem;
+  font-weight: 700; /* más pesado */
+  margin-bottom: 3rem;
+  color: #212529; /* más contraste */
+  letter-spacing: 0.5px; /* espacio entre letras */
+}
+
+/* Contenedor de pasos */
+.pasos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Cada tarjeta de paso */
+.paso {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  width: 270px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover mejorado */
+.paso:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Halo sutil detrás de la tarjeta */
+.paso::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0,123,255,0.08) 0%, rgba(0,123,255,0) 70%);
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.5s ease-in-out;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.paso:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Iconos centrados */
+.paso img {
+  width: 80px;
+  margin-bottom: 1rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1;
+  position: relative;
+}
+
+/* Título del paso */
+.paso h5 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #007bff; /* color destacado */
+  z-index: 2;
+  position: relative;
+}
+
+/* Descripción */
+.paso p {
+  font-size: 1rem;
+  color: #495057;
+  line-height: 1.5;
+  z-index: 2;
+  position: relative;
+}
+
+/* ==============================
+   Hero / Encabezado principal
+============================== */
+
+.hero-bg .circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(6rem); /* un poco menos difuso que antes */
+  opacity: 0.25;
+  z-index: 1;
+}
+
+.hero-bg .top-left {
+  top: -3rem;       /* menos desplazado */
+  left: -3rem;
+  width: 8rem;      /* más pequeño */
+  height: 8rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+}
+
+.hero-bg .bottom-right {
+  bottom: -3rem;    /* menos desplazado */
+  right: -3rem;
+  width: 10rem;     /* más pequeño */
+  height: 10rem;
+  background: linear-gradient(135deg, #a78bfa, #f472b6);
+}
+
+
+/* ==============================
+   Footer
+============================== */
+footer {
+  background-color: #212529;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #4da3ff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}

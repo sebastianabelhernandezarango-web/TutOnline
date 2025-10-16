@@ -21,7 +21,7 @@ function Navbar({ user, setUser }) {
     {!user ? (
       <div className="d-flex align-items-center gap-4">
         {/* Centramos “Cómo funciona” un poco */}
-        <Link to="/src/context/ComoFunciona.jsx" className="nav-link fw-semibold" style={{ marginRight: "1rem" }}>Cómo funciona?</Link>
+        <a href="#como-funciona" className="nav-link">Cómo funciona</a>
         <div className="d-flex gap-2">
           <Button variant="outline-primary" onClick={() => setShowLogin(true)}>Iniciar sesión</Button>
           <Button variant="primary" onClick={() => setShowRegister(true)}>Registrarse</Button>
