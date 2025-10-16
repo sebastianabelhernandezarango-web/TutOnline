@@ -1,20 +1,31 @@
-import React from "react";
-import { Button } from "react-bootstrap";
 import "../Styles/LandingPage.css";
 import lupa from "../Img/icons/Lupa.png";
 import mundo from "../Img/icons/alrededor-del-mundo.png";
 import libros from "../Img/icons/pila-de-libros.png";
 
-function LandingPage() {
+// Props tipadas
+interface LandingPageProps {
+  user: boolean | null;
+}
+
+function LandingPage({ user }: LandingPageProps) {
   return (
     <div className="landing-page">
-
-    <h2 className="titulo">
-    Encuentra el tutor perfecto para tu aprendizaje
-    </h2>
-    <p className="parrafo">
+      <h2 className="titulo">
+        Encuentra el tutor perfecto para tu aprendizaje
+      </h2>
+      <p className="parrafo">
         Conecta con tutores expertos en más de 100 materias. Clases online personalizadas al mejor precio.
-    </p>
+      </p>
+
+      {/* Ejemplo de uso de la prop user */}
+      <p className="text-center">
+        {user === null
+          ? "Bienvenido, por favor inicia sesión o regístrate"
+          : user
+          ? "¡Bienvenido de nuevo!"
+          : "No estás logueado"}
+      </p>
 
     <div className="search-bar">
     <div className="input-group">

@@ -1,12 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
-import Navbar from "./Components/NavBar.jsx";
-import LandingPage from "./Pages/LandingPage.jsx";
-import DashboardStudent from "./pages/DashboardStudent";
-import BusquedaTutores from "./pages/BusquedaTutores";
+import Navbar from "./Components/NavBar.tsx";
+import LandingPage from "./Pages/LandingPage.tsx";
+import DashboardStudent from "./Pages/DashBoardStudent.tsx";
+import BusquedaTutores from "./Pages/BusquedaTutores.tsx";
 
 function App() {
-  const [user, setUser] = useState(true); // null = no logueado, true = Logueado
+  // user puede ser null (no logueado) o boolean (logueado)
+  const [user, setUser] = useState<boolean | null>(true);
 
   return (
     <Router>
