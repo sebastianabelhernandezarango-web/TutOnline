@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { useNavigate } from "react-router-dom"; 
-import '../Styles/BusquedaTutores.css'; 
+import { useNavigate } from "react-router-dom";
+import '../Styles/BusquedaTutores.css';
 
 export default function BusquedaTutores() {
   const [activeView, setActiveView] = useState<'lista' | 'mapa'>('mapa');
@@ -15,9 +15,9 @@ export default function BusquedaTutores() {
 
       <section className="search-controls">
         <div className="search-bar-wrapper">
-          <input 
-            type="text" 
-            placeholder="Buscar por tutor, materia o especialidad..." 
+          <input
+            type="text"
+            placeholder="Buscar por tutor, materia o especialidad..."
             className="search-input"
           />
           <button className="filter-button">
@@ -27,15 +27,15 @@ export default function BusquedaTutores() {
 
         <div className="view-toggle">
           <div className="view-options">
-            <button 
-              id="list-view-btn" 
+            <button
+              id="list-view-btn"
               className={`view-btn ${activeView === 'lista' ? 'active' : ''}`}
               onClick={() => setActiveView('lista')}
             >
               <i className="fas fa-list"></i> Lista
             </button>
-            <button 
-              id="map-view-btn" 
+            <button
+              id="map-view-btn"
               className={`view-btn ${activeView === 'mapa' ? 'active' : ''}`}
               onClick={() => setActiveView('mapa')}
             >
@@ -53,8 +53,8 @@ export default function BusquedaTutores() {
             <i className="fas fa-map-marked-alt map-icon"></i>
             <h2>Vista de Mapa</h2>
             <p>Para ver tutores en el mapa interactivo, haz clic en el botón:</p>
-            <button 
-              className="MapaTutores" 
+            <button
+              className="MapaTutores"
               onClick={() => navigate("/mapas-tutores")}
             >
               Mapa Interactivo
@@ -63,6 +63,7 @@ export default function BusquedaTutores() {
         </section>
       )}
 
+      {/* Vista Lista */}
       {activeView === 'lista' && (
         <section className="list-view-content" id="list-content">
           <p style={{ textAlign: 'center', padding: '20px' }}>
