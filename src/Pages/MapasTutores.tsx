@@ -4,7 +4,7 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "../Styles/MapasTutores.css";
 
-// Corregir icono de marcador (Leaflet en React necesita este fix)
+// Configuración del ícono del marcador
 const icon = L.icon({
   iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png",
   iconSize: [25, 41],
@@ -30,7 +30,7 @@ export default function MapasTutores() {
   return (
     <div className="mapas-container">
       <header>
-        <h1>Mapas de tutores</h1>
+        <h1>Mapas de Tutores</h1>
         <p>Ubica en tiempo real a tu tutor</p>
       </header>
 
