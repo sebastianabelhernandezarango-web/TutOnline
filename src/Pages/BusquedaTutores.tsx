@@ -10,7 +10,7 @@ export default function BusquedaTutores() {
     <div className="tutor-search-container">
       <header>
         <h1>Buscar Tutores</h1>
-        <p>Encuentra el tutor perfecto para alcanzar tus objetivos académicos</p>
+        <p>Encuentra el tutor perfecto para alcanzar tus objetivos</p>
       </header>
 
       <section className="search-controls">
