@@ -1,4 +1,7 @@
-import "../Styles/Dashboard.css"
+import "../Styles/Dashboard.css";
+import { TUTORES_DATA } from "../data/TutorData"; 
+import type { Tutor } from "../data/TutorData"; 
+
 export default function DashBoardStudent() {
   return (
     <div className="dashboard-student container-fluid">
@@ -77,24 +80,20 @@ export default function DashBoardStudent() {
         {/* ======= Columna derecha ======= */}
         <aside className="col-lg-3 col-md-12 rightbar">
           <div className="card sugeridos">
-            <h5>🎓 Tutores sugeridos</h5>
+            <h5>🎓 Tutores destacados</h5>
             <ul>
-              <li>
-                <div className="avatar tutor">LT</div>
-                <div>
-                  <strong>Laura Torres</strong>
-                  <small>Programación</small>
-                </div>
-                <button className="btn-mini">Seguir</button>
-              </li>
-              <li>
-                <div className="avatar tutor">SC</div>
-                <div>
-                  <strong>Santiago Cruz</strong>
-                  <small>Química</small>
-                </div>
-                <button className="btn-mini">Seguir</button>
-              </li>
+              {TUTORES_DATA.map((tutor: Tutor) => (
+                <li key={tutor.id}>
+                  <div className="avatar tutor">
+                    {tutor.nombre.split(" ").map(p => p[0]).join("").slice(0, 2).toUpperCase()}
+                  </div>
+                  <div>
+                    <strong>{tutor.nombre}</strong>
+                    <small>{tutor.especialidad}</small>
+                  </div>
+                  <button className="btn-mini">Seguir</button>
+                </li>
+              ))}
             </ul>
           </div>
 

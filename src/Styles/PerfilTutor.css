@@ -1,0 +1,584 @@
+/* === PERFIL TUTOR: ESTILOS BASE === */
+.contenedor-tutores {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: "Poppins", sans-serif;
+    color: #222;
+}
+
+/* === TÍTULO Y BUSCADOR === */
+.titulo-busqueda {
+    text-align: center;
+    font-size: 2rem;
+    color: #1e3a8a;
+    margin-bottom: 20px;
+}
+
+.barra-busqueda {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.barra-busqueda:focus {
+    border-color: #1e3a8a;
+    box-shadow: 0 0 8px rgba(30, 58, 138, 0.3);
+    outline: none;
+}
+
+/* === LISTA DE TUTORES (LAYOUT) === */
+.lista-tutores {
+    /* Mantenemos el grid para las tarjetas nuevas */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+/* Deshabilitamos el estilo anterior de tarjeta (tarjeta-tutor original) */
+.tarjeta-tutor { 
+    display: none; 
+} 
+
+/* ================================================= */
+/* === ESTILOS PARA LA NUEVA TARJETA DE TUTOR (MENOS DETALLADA) === */
+/* ================================================= */
+
+.tarjeta-tutor-nuevo {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden; 
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta-tutor-nuevo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* CABECERA (Fondo de color) */
+.tutor-header-bg {
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.info-principal {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    flex-grow: 1;
+}
+
+.avatar-siglas {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.nombre-verificado {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 2px;
+}
+
+.tutor-header-bg h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: white;
+    font-weight: 600;
+}
+
+.tag-verificado {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.materia, .experiencia {
+    margin: 3px 0;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.stats-precio {
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.calificacion-header {
+    margin: 0 0 5px 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.precio-header {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* CUERPO DE LA TARJETA (Contenido Blanco) */
+.tutor-body-content {
+    padding: 15px 20px 20px 20px;
+}
+
+.descripcion-tarjeta {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 15px;
+    min-height: 40px; 
+}
+
+/* Chips de Materias */
+.chips-materias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 15px;
+}
+
+.chip {
+    background-color: #eef2ff;
+    color: #1e3a8a; 
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Información con Íconos */
+.info-iconos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 10px 0;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.info-iconos > div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Botones de Acción de la Tarjeta */
+.botones-tarjeta {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.btn-chat {
+    background: #fff;
+    border: 1px solid #ccc;
+    color: #555;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    flex: 1;
+    transition: all 0.2s ease;
+}
+
+.btn-chat:hover {
+    background-color: #f0f0f0;
+}
+
+.btn-reservar-tarjeta {
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    flex: 2; 
+    font-weight: bold;
+    transition: opacity 0.2s ease;
+}
+
+.btn-reservar-tarjeta:hover {
+    opacity: 0.9;
+}
+
+.btn-favorito-tarjeta {
+    background: none;
+    border: 1px solid #ccc;
+    color: #f59e0b; 
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background 0.2s ease;
+}
+
+.btn-favorito-tarjeta:hover {
+    background-color: #fef3c7; 
+}
+
+
+/* ================================================= */
+/* === ESTILOS PARA EL PERFIL DETALLADO (VISTA COMPLETA) === */
+/* ================================================= */
+
+.perfil-detallado {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    padding: 30px;
+    animation: aparecer 0.3s ease;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.btn-volver {
+    background: none;
+    border: none;
+    color: #1e3a8a;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+.btn-volver:hover {
+    color: #3b82f6;
+}
+
+/* Contenedor principal del layout: 2 columnas */
+.perfil-contenido-layout {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.perfil-columna-principal {
+    flex: 2; /* Ocupa ~65% */
+    min-width: 0;
+}
+
+.perfil-columna-lateral {
+    flex: 1; /* Ocupa ~35% */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Header del Perfil (Foto, Nombre, Precio, etc.) */
+.perfil-header-principal {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e5e7eb;
+    margin-bottom: 15px;
+}
+
+.foto-perfil { /* Diseño de la foto en la vista detallada */
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #ff8c00; /* Naranja */
+    object-fit: cover;
+}
+
+.info-header {
+    flex-grow: 1;
+}
+
+.nombre-precio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nombre-precio h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #222;
+}
+
+.precio {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #333;
+    padding-left: 15px;
+    border-left: 1px solid #eee;
+}
+
+.precio small {
+    font-size: 0.6em;
+    font-weight: normal;
+    color: #777;
+    display: block;
+    text-align: right;
+}
+
+.profesion {
+    font-size: 1.1rem;
+    color: #ff8c00;
+    margin: 5px 0 8px 0;
+    font-weight: 600;
+}
+
+.meta-info, .ubicacion {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 3px 0;
+}
+
+.ubicacion span {
+    color: #10b981; 
+    font-weight: 500;
+}
+
+.estrellas {
+    color: #facc15;
+    font-weight: bold;
+}
+
+/* Especialidades (Tags en vista detallada) */
+.seccion-especialidades {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.tag-especialidad {
+    background-color: #f0f4ff; 
+    color: #1e3a8a; 
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid #bfdbfe;
+}
+
+/* Navegación por Pestañas */
+.navegacion-perfil {
+    display: flex;
+    border-bottom: 1px solid #e5e7eb;
+    margin-bottom: 20px;
+}
+
+.btn-nav-perfil {
+    background: none;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #555;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s ease;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.btn-nav-perfil.activo {
+    color: #ff8c00; 
+    border-bottom-color: #ff8c00;
+}
+
+/* Contenido de las Secciones */
+.contenido-seccion {
+    padding-top: 10px;
+}
+
+.seccion-detalle h3 {
+    font-size: 1.4rem;
+    color: #222;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+.seccion-detalle:first-child h3 {
+    margin-top: 0;
+}
+
+.descripcion { /* Biografía */
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+.experiencia-item {
+    margin-bottom: 18px;
+}
+
+.experiencia-item strong {
+    display: block;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.empresa-periodo {
+    font-size: 0.9rem;
+    color: #777;
+    margin: 3px 0 5px 0;
+}
+
+.seccion-detalle ul {
+    list-style: none;
+    padding: 0;
+}
+
+.seccion-detalle li {
+    padding: 8px 0;
+    position: relative;
+    padding-left: 20px;
+    font-size: 1rem;
+    color: #444;
+}
+
+.seccion-detalle li::before {
+    content: "•"; 
+    color: #ff8c00; 
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+
+/* Bloques de la Columna Lateral (Sidebar) */
+.bloque-sidebar {
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #fefcfb; 
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.bloque-sidebar.acciones {
+    background-color: #fff;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+}
+
+.bloque-sidebar h3 {
+    margin-top: 0;
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: #333;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+}
+
+/* Botones de Acción (Reservar, Favoritos, Mensaje) */
+.btn-reservar {
+    background-color: #ff8c00;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    width: 100%;
+    margin-bottom: 10px;
+    transition: background 0.2s ease;
+}
+
+.btn-reservar:hover {
+    background-color: #e88000;
+}
+
+/* Ocultamos el bloque de botones de acción original para usar el nuevo del sidebar */
+.botones-accion {
+    display: none; 
+} 
+
+.botones-secundarios {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-favorito, .btn-mensaje {
+    background: none;
+    border: 1px solid #e5e7eb;
+    color: #333;
+    cursor: pointer;
+    padding: 10px 15px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 8px;
+    flex-grow: 1;
+    margin: 0 5px;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-favorito:hover, .btn-mensaje:hover {
+    background-color: #f9f9f9;
+    border-color: #ccc;
+}
+
+/* Información y Estadísticas */
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.info-item strong {
+    font-weight: 600;
+    color: #333;
+}
+
+/* Reseñas (manteniendo el estilo original con mejoras) */
+.reseñas {
+    background: #f9fafb;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 20px; /* Separación de la sección anterior */
+}
+
+.reseñas h3 {
+    margin-bottom: 15px;
+    color: #1e3a8a;
+}
+
+.reseña {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}

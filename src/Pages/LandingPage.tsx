@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom"; 
 import "../Styles/LandingPage.css";
 import lupa from "../Img/icons/Lupa.png";
 import mundo from "../Img/icons/alrededor-del-mundo.png";
@@ -9,6 +10,17 @@ interface LandingPageProps {
 }
 
 function LandingPage({ user }: LandingPageProps) {
+  const navigate = useNavigate();
+
+  const handleVerTutores = () => {
+ 
+    if (user) {
+      navigate("/perfil-tutor"); 
+    } else {
+      console.log("Acceso denegado: Por favor, inicie sesión para ver tutores.");
+    }
+  };
+
   return (
     <div className="landing-page">
       <h2 className="titulo">
@@ -112,13 +124,14 @@ function LandingPage({ user }: LandingPageProps) {
             </div>
           </div>
 
-          <button className="btn btn-primary mt-4">Ver todos los tutores</button>
+          {/* Botón corregido con la función de navegación condicional */}
+          <button className="btn btn-primary mt-4" onClick={handleVerTutores}>Ver todos los tutores</button>
         </div>
       </section>
 
 
 
-           {/* Sección como funcion*/} 
+        {/* Sección como funcion*/} 
       <section id="como-funciona" className="como-funciona py-5 text-center">
         <div className="container">
           <h2 className="fw-bold mb-5">¿Cómo funciona?</h2>
