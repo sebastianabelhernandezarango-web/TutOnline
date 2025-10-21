@@ -1,0 +1,330 @@
+/* ReservaClase.css */
+
+:root {
+  /* Variables de color basadas en la imagen */
+  --color-primary: #f69435; /* Naranja del botón */
+  --color-text-dark: #333;
+  --color-text-light: #666;
+  --color-border: #eee;
+  --color-bg-light: #f9f9f9;
+  --color-selected-bg: #e6f7ff; /* Fondo claro para fecha seleccionada */
+  --color-selected-border: #1890ff; /* Borde para fecha seleccionada */
+  --color-green-note: #52c41a; /* Verde para las notas de seguridad/cancelación */
+}
+
+.reserva-container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: white; /* Aseguramos un fondo blanco para el contenido */
+}
+
+/* --- Placeholders / Top Bar (Para simular la barra superior) --- */
+.top-bar-placeholder {
+    height: 50px; /* Altura de una barra de navegación típica */
+    /* Estilos opcionales para visualización */
+    /* border-bottom: 1px solid #ddd; */
+    /* margin-bottom: 20px; */
+}
+
+
+/* --- Encabezado General --- */
+.reserva-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  /* El título ya no está centrado en la segunda imagen, lo quitamos */
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: var(--color-text-dark);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 5px 10px;
+  margin-right: 15px;
+  display: flex; /* Para centrar el texto con el icono si tuviéramos uno */
+  align-items: center;
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: bold;
+  /* Eliminado el display: none o float para el título en la segunda imagen */
+}
+
+/* --- Contenido Principal (Flexbox) --- */
+.reserva-main-content {
+  display: flex;
+  gap: 30px; /* Espacio entre las columnas */
+}
+
+/* Columna de Detalles (Ocupa más espacio) */
+.reserva-details-column {
+  flex: 3; /* Asigna 3 partes del espacio */
+}
+
+/* Columna de Resumen (Ocupa menos espacio) */
+.reserva-summary-column {
+  flex: 2; /* Asigna 2 partes del espacio */
+}
+
+/* --- Sección Información del Tutor --- */
+.tutor-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.tutor-profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.tutor-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.tutor-name {
+  margin: 0;
+  font-size: 18px;
+}
+
+.tutor-profession, .tutor-rating {
+  margin: 0;
+  color: var(--color-text-light);
+  font-size: 14px;
+}
+
+.tutor-price {
+  font-size: 18px; /* Más pequeño que el diseño original para encajar la frase 'por hora' */
+  font-weight: bold;
+  color: var(--color-text-dark);
+}
+
+/* --- Selector de Fecha y Hora --- */
+.date-time-selector, .class-details {
+  margin-bottom: 30px;
+}
+
+.date-time-selector h4, .class-details h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.calendar-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 5px 0;
+}
+
+.current-month {
+  font-weight: bold;
+  font-size: 16px;
+  color: var(--color-text-dark);
+}
+
+.control-button {
+  background: none;
+  border: none;
+  color: var(--color-text-dark);
+  cursor: pointer;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.date-picker {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 20px;
+}
+
+.date-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 3px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  cursor: pointer;
+  width: calc(100% / 7 - 5px); /* Distribución uniforme */
+  transition: all 0.2s;
+}
+
+.date-item:hover {
+  background-color: var(--color-bg-light);
+}
+
+.date-item.selected {
+  border-color: var(--color-selected-border);
+  background-color: var(--color-selected-bg);
+  box-shadow: 0 0 0 1px var(--color-selected-border) inset;
+}
+
+.date-item.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #f7f7f7;
+}
+
+.date-day {
+  font-size: 12px;
+  color: var(--color-text-light);
+  margin-bottom: 2px;
+}
+
+.date-num {
+  font-size: 16px; /* Más ajustado al wireframe */
+  font-weight: bold;
+  color: var(--color-text-dark);
+}
+
+.date-month {
+    font-size: 10px;
+    color: var(--color-text-light);
+    margin-top: 2px;
+}
+
+/* --- Detalles de la Clase (Formulario) --- */
+.detail-item {
+  margin-bottom: 20px;
+}
+
+.detail-item label {
+  display: block;
+  font-size: 14px;
+  color: var(--color-text-light);
+  margin-bottom: 5px;
+}
+
+.detail-item select, .detail-item textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box; /* Incluye padding y borde en el ancho */
+  background-color: white;
+}
+
+.detail-item textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.radio-group {
+    display: flex;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    color: var(--color-text-dark);
+}
+
+/* --- Resumen de Reserva (Columna Derecha) --- */
+.summary-box {
+  background-color: white; /* Fondo blanco */
+  padding: 20px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada para destacar */
+  position: sticky; 
+  top: 20px;
+}
+
+.summary-box h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: var(--color-text-light);
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid var(--color-border);
+  font-size: 22px; /* Un poco más grande para el total */
+  font-weight: bold;
+  color: var(--color-text-dark);
+}
+
+.security-note, .cancellation-note {
+  margin-top: 15px;
+  font-size: 12px;
+  color: var(--color-green-note); /* Verde para las notas */
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+/* Se puede añadir un icono de candado o similar para la nota de seguridad si se usan iconos */
+
+.confirm-button {
+  width: 100%;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.confirm-button:hover {
+  background-color: #e08329; /* Tono más oscuro de naranja */
+}
+
+.terms-note {
+  font-size: 12px;
+  color: var(--color-text-light);
+  margin-top: 15px;
+  text-align: center;
+}
+
+.terms-note a {
+    color: var(--color-text-light);
+    text-decoration: underline;
+}
+
+/* Responsive (Opcional) */
+@media (max-width: 900px) {
+    .reserva-main-content {
+        flex-direction: column;
+    }
+    .reserva-summary-column {
+        position: static;
+        top: auto;
+    }
+}

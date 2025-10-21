@@ -5,6 +5,8 @@ import LandingPage from "./Pages/LandingPage.tsx";
 import DashboardStudent from "./Pages/DashBoardStudent.tsx";
 import BusquedaTutores from "./Pages/BusquedaTutores.tsx";
 import MapasTutores from "./Pages/MapasTutores";
+import Reserva from "./Pages/Reserva.tsx";
+import PerfilTutor from "./Pages/PerfilTutor.tsx";
 
 function App() {
   // user puede ser null (no logueado) o boolean (logueado)
@@ -19,7 +21,9 @@ function App() {
           <>
             <Route path="/dashboard" element={<DashboardStudent />} />
             <Route path="/busqueda" element={<BusquedaTutores />} />
-             <Route path="/mapas-tutores" element={<MapasTutores />} />
+            <Route path="/mapas-tutores" element={<MapasTutores />} />
+            <Route path="/reserva" element={<Reserva />} />
+            <Route path="/perfil-tutor" element={<PerfilTutor />} />  
           </>
         )}
       </Routes>
