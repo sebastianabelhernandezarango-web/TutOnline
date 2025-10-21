@@ -14,7 +14,7 @@ function LandingPage({ user, setShowLogin }: LandingPageProps)  {
 
   return (
     <div className="landing-page">
-      {/* 🧠 Encabezado */}
+      {/* Encabezado */}
       <h2 className="titulo">Encuentra el tutor perfecto para tu aprendizaje</h2>
       <p className="parrafo">
         Conecta con tutores expertos en más de 100 materias. Clases online personalizadas al mejor precio.
@@ -27,7 +27,7 @@ function LandingPage({ user, setShowLogin }: LandingPageProps)  {
           : "Bienvenido, por favor inicia sesión o regístrate"}
       </p>
 
-      {/* 🔍 Barra de búsqueda */}
+      {/*  Barra de búsqueda */}
       <div className="search-bar">
         <div className="input-group">
           <input
@@ -50,7 +50,7 @@ function LandingPage({ user, setShowLogin }: LandingPageProps)  {
         </div>
       </div>
 
-      {/* 📊 Sección de estadísticas */}
+      {/* Sección de estadísticas */}
       <section className="estadisticas py-5 text-center">
         <div className="container">
           <div className="row justify-content-center">
@@ -70,7 +70,7 @@ function LandingPage({ user, setShowLogin }: LandingPageProps)  {
         </div>
       </section>
 
-      {/* 👩‍🏫 Tutores destacados */}
+      {/* Tutores destacados */}
       <section className="tutores-destacados py-5 text-center">
         <div className="container">
           <h2 className="fw-bold mb-5">Tutores Destacados</h2>
@@ -111,7 +111,7 @@ function LandingPage({ user, setShowLogin }: LandingPageProps)  {
         </div>
       </section>
 
-      {/* 🧭 Sección Cómo funciona */}
+      {/* Sección Cómo funciona */}
       <section id="como-funciona" className="como-funciona py-5 text-center">
         <div className="container">
           <h2 className="fw-bold mb-5">¿Cómo funciona?</h2>
@@ -137,7 +137,7 @@ function LandingPage({ user, setShowLogin }: LandingPageProps)  {
         </div>
       </section>
 
-      {/* 🌈 Hero */}
+      {/*  Hero */}
       <section className="hero-section text-center py-5 position-relative overflow-hidden">
         <div className="hero-bg">
           <div className="circle top-left"></div>
@@ -170,7 +170,7 @@ function LandingPage({ user, setShowLogin }: LandingPageProps)  {
         </div>
       </section>
 
-      {/* ⚙️ Footer */}
+      {/* Footer */}
       <footer className="text-center py-4 bg-dark text-white">
         <p className="mb-0">© 2025 TutOnline. Todos los derechos reservados.</p>
       </footer>

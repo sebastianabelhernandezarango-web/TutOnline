@@ -82,7 +82,7 @@ export default function BusquedaTutores() {
   const [tutorSeleccionado, setTutorSeleccionado] = useState<Tutor | null>(null);
   const navigate = useNavigate();
 
-  // 🔗 Función para manejar la reserva
+  // Función para manejar la reserva
   const handleReservarClick = (tutor: Tutor) => {
     navigate("/reserva", { state: { tutorAReservar: tutor } });
   };
